@@ -54,7 +54,7 @@ public class Bud : MonoBehaviour
     }
 
     public void CreateBud() {
-        GameObject newBud = Instantiate(budPrefab, transform.position + transform.forward * 2, transform.rotation);
+        GameObject newBud = Instantiate(budPrefab, transform.position + transform.forward * 4, transform.rotation);
         newBud.GetComponent<Bud>().SetRoot(GetComponent<Rigidbody>());
         newBud.GetComponent<Bud>().SetMaxDistance(newBudDistance);
         newBud.GetComponent<Bud>().SetRootBud(rootBud);

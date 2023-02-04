@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 4753116033313107623}
   - component: {fileID: 622077060}
   - component: {fileID: 7086613593545325695}
+  - component: {fileID: 1303335290215137318}
   m_Layer: 0
   m_Name: Bud
   m_TagString: Player
@@ -387,7 +388,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!120 &4753116033313107623
 LineRenderer:
@@ -519,9 +520,22 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6228291024031781740}
+  m_Material: {fileID: 13400000, guid: 9817fe0a59569b2479aafe221b7f0865, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &1303335290215137318
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228291024031781740}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}

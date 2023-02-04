@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float maxGravity;
     [SerializeField]
+    private float gravityInc;
     private float gravity;
     [SerializeField]
     private float speedAcl = 10f;
@@ -63,7 +64,18 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat(velocityHash, (currentSpeed / speed));
 
-        rb.velocity = new Vector3(movementVector.x, 0, movementVector.y) * currentSpeed;
+        if(IsGrounded()) {
+            rb.velocity = new Vector3(movementVector.x, 0, movementVector.y) * currentSpeed;
+            gravity = 0;
+        } else {
+            gravity += gravityInc * Time.deltaTime;
+            if(gravity > maxGravity) {
+                gravity = maxGravity;
+            }
+            rb.velocity = new Vector3(movementVector.x * currentSpeed, -gravity, movementVector.y * currentSpeed);
+        }
+
+        Debug.Log(IsGrounded());
     }
 
     public void Move(InputAction.CallbackContext context) {
@@ -84,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool IsGrounded() {
-        return Physics.Raycast(groundCheck.position, Vector3.down, 0.2f, groundLayer);
+        return Physics.Raycast(groundCheck.position, Vector3.down, 1f, groundLayer);
     }
 
     public void AddForce(Vector3 force) {
