@@ -82,7 +82,9 @@ public class WindTunnel : MonoBehaviour
                     yield return null;
                 }
                 currentDirection = targetDirection;
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(8);
+                currentDirection = Vector2.zero;
+                yield return new WaitForSeconds(4f);
             }
         }
     }
