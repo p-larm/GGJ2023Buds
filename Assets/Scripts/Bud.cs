@@ -53,12 +53,24 @@ public class Bud : MonoBehaviour
         lineRenderer.SetPosition(0, root.transform.position);
     }
 
-    public void CreateBud() {
-        GameObject newBud = Instantiate(budPrefab, transform.position + transform.forward * 4, transform.rotation);
+    public GameObject CreateBud() {
+        Vector3 randomDirection = new Vector3(Random.value, 0, Random.value).normalized;
+        GameObject newBud = Instantiate(budPrefab, transform.position + randomDirection * 4, transform.rotation);
         newBud.GetComponent<Bud>().SetRoot(GetComponent<Rigidbody>());
         newBud.GetComponent<Bud>().SetMaxDistance(newBudDistance);
         newBud.GetComponent<Bud>().SetRootBud(rootBud);
         rootBud.IncreaseMaxDistance(distanceIncreaseAmt);
+        return newBud;
+    }
+
+    public GameObject CreateBud(Vector3 spawnPoint) {
+        GameObject newBud = Instantiate(budPrefab, spawnPoint, transform.rotation);
+        newBud.GetComponent<Bud>().SetRoot(GetComponent<Rigidbody>());
+        newBud.GetComponent<Bud>().SetMaxDistance(newBudDistance);
+        newBud.GetComponent<Bud>().SetRootBud(rootBud);
+        rootBud.IncreaseMaxDistance(distanceIncreaseAmt);
+        newBud.transform.parent = transform;
+        return newBud;
     }
 
     public void SetRoot(Rigidbody body) {
@@ -83,6 +95,10 @@ public class Bud : MonoBehaviour
         return isRootBud;
     }
 
+    public void SetisRootBud(bool isRootBud) {
+        this.isRootBud = isRootBud;
+    }
+
     public Bud GetRootBud() {
         return rootBud;
     }
@@ -97,5 +113,16 @@ public class Bud : MonoBehaviour
 
     public bool GetCarryingNewRoot() {
         return carryingNewRoot;
+    }
+
+    public void Respawn(Vector3 respawnPoint) {
+        Bud rootBud = GetRootBud();
+        rootBud.gameObject.transform.position = respawnPoint;
+        List<Bud> allBuds = mainCamera.GetComponent<CameraController>().GetList();
+
+        foreach(Bud b in allBuds) {
+            Vector3 randomDirection = new Vector3(Random.value, 0, Random.value).normalized;
+            b.transform.position = rootBud.transform.position + randomDirection * 4;
+        }
     }
 }

@@ -43,4 +43,26 @@ public class CameraController : MonoBehaviour
         }
         buds.Add(bud);
     }
+
+    public void RemoveBud(Bud b) {
+        List<Bud> newBuds = new List<Bud>();
+        for(int i = 0; i < buds.Count; i++) {
+            if(buds[i] != b) {
+                newBuds.Add(buds[i]);
+            }
+        }
+        buds = newBuds;
+    }
+
+    public int GetBudCount() {
+        return buds.Count;
+    }
+
+    public List<Bud> GetList() {
+        return buds;
+    }
+
+    public void ClearList() {
+        buds = new List<Bud>();
+    }
 }

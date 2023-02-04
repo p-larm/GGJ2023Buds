@@ -74,8 +74,6 @@ public class PlayerMovement : MonoBehaviour
             }
             rb.velocity = new Vector3(movementVector.x * currentSpeed, -gravity, movementVector.y * currentSpeed);
         }
-
-        Debug.Log(IsGrounded());
     }
 
     public void Move(InputAction.CallbackContext context) {
