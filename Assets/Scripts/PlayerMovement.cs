@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool IsGrounded() {
-        return Physics.Raycast(groundCheck.position, Vector3.down, 1f, groundLayer);
+        return Physics.Raycast(groundCheck.position, Vector3.down, 0.5f, groundLayer);
     }
 
     public void AddForce(Vector3 force) {

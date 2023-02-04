@@ -273,7 +273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPopup: {fileID: 1633859748}
-  connectionColor: {r: 0, g: 0, b: 0, a: 0}
+  connectionColor: {r: 0.051253583, g: 0.4716981, b: 0, a: 1}
+  isOriginalRoot: 0
 --- !u!114 &8705863051238020652
 MonoBehaviour:
   m_ObjectHideFlags: 0

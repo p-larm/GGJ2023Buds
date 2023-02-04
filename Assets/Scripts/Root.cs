@@ -30,7 +30,7 @@ public class Root : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context) {
         if(context.performed) {
-            if(activated && !interacted) {
+            if(activated && !interacted && !rootBud.GetCarryingNewRoot()) {
                 if(!isOriginalRoot) {
                     interacted = true;
                 }
