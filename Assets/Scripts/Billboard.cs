@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
+    [SerializeField]
     private float floatSpeed;
+    [SerializeField]
     private float floatDamper;
     private Camera theCam;
-    private float startyPos;
+    private float startzPos;
     private float floatInc;
 
     private bool isOn;
@@ -18,10 +20,10 @@ public class Billboard : MonoBehaviour
     void Start()
     {
         theCam = Camera.main;
-        startyPos = transform.position.y;
+        startzPos = transform.position.z;
         floatInc = 0;
-        floatSpeed = 2.0f;
-        floatDamper = 10.0f;
+        // floatSpeed = 2.0f;
+        // floatDamper = 10.0f;
 
         isOn = false;
 
@@ -33,10 +35,7 @@ public class Billboard : MonoBehaviour
     void LateUpdate()
     {
         if(isOn) {
-            transform.LookAt(theCam.transform);
-            transform.Rotate(new Vector3(0, 180, 0), Space.Self);
-
-            transform.position = new Vector3(transform.position.x, startyPos + Mathf.Cos(floatInc) / floatDamper, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y, startzPos + Mathf.Cos(floatInc) / floatDamper);
 
             floatInc += floatSpeed * Time.deltaTime;
         }
@@ -54,7 +53,7 @@ public class Billboard : MonoBehaviour
         sprite.enabled = false;
     }
 
-    public void SetStartPos(float yPos) {
-        startyPos = yPos;
+    public void SetStartPos(float zPos) {
+        startzPos = zPos;
     }
 }

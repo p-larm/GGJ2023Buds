@@ -40,7 +40,6 @@ public class WindTunnel : MonoBehaviour
 
     private void Update() {
         Vector3 force = new Vector3(currentDirection.x, 0, currentDirection.y) * windForce;
-        Debug.Log(force.ToString());
         HandleEffects(force);
 
         foreach(PlayerMovement bud in budList) {
@@ -50,14 +49,12 @@ public class WindTunnel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Player")) {
-            Debug.Log("Player Enter");
             budList.Add(other.gameObject.GetComponent<PlayerMovement>());
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if(other.gameObject.CompareTag("Player")) {
-            Debug.Log("Player Exit");
             for(int i = 0; i < budList.Count; i++) {
                 if(budList[i] == other.gameObject.GetComponent<PlayerMovement>()) {
                     budList.RemoveAt(i);
@@ -96,14 +93,6 @@ public class WindTunnel : MonoBehaviour
 
         loopEffect.gameObject.transform.right = Vector3.Lerp(loopEffect.gameObject.transform.right, direction, 0.1f);
         loopEffect.gameObject.transform.Rotate(new Vector3(90, 0, 0), Space.Self);
-
-/*             if(force.x < 0) {
-                loopEffect.gameObject.transform.localScale *= -1;
-                straightEffect.gameObject.transform.localScale *= 1;
-            } else {
-                loopEffect.gameObject.transform.localScale = -1f;
-                straightEffect.gameObject.transform.localScale = -1f;
-            } */
 
         straightEffect.gameObject.transform.eulerAngles = loopEffect.gameObject.transform.eulerAngles;
 

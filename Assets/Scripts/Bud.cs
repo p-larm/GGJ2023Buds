@@ -28,6 +28,7 @@ public class Bud : MonoBehaviour
     private Color endColor;
     private SpringJoint rootTether;
     private LineRenderer lineRenderer;
+    private bool carryingNewRoot;
 
     private void Awake() {
         rootTether = GetComponent<SpringJoint>();
@@ -37,6 +38,8 @@ public class Bud : MonoBehaviour
         lineRenderer.startColor = Color.green;
         mainCamera = Camera.main;
         mainCamera.gameObject.GetComponent<CameraController>().AddBud(this);
+
+        carryingNewRoot = false;
 
         if(isRootBud) {
             rootBud = this;
@@ -78,5 +81,21 @@ public class Bud : MonoBehaviour
 
     public bool GetisRootBud(){
         return isRootBud;
+    }
+
+    public Bud GetRootBud() {
+        return rootBud;
+    }
+
+    public GameObject GetRoot() {
+        return root;
+    }
+
+    public void SetCarryingNewRoot(bool carrying) {
+        carryingNewRoot = carrying;
+    }
+
+    public bool GetCarryingNewRoot() {
+        return carryingNewRoot;
     }
 }

@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private int velocityHash;
 
-
     private Bud budRef;
 
     private void Awake(){
