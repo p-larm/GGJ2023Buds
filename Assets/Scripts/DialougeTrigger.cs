@@ -12,7 +12,11 @@ public class DialougeTrigger : MonoBehaviour
     private string[] sentences;
 
     [SerializeField]
+<<<<<<< Updated upstream
     private string presonName;
+=======
+    private string[] names;
+>>>>>>> Stashed changes
 
     private bool activated;
 
@@ -20,16 +24,26 @@ public class DialougeTrigger : MonoBehaviour
         activated = false;
     }
 
+<<<<<<< Updated upstream
     public void ActivateWithInput(InputAction.CallbackContext context) {
         if(context.performed) {
             dialouge.StartDialogue();
             activated = true;
         }
+=======
+    public void ActivateWithInput() {
+        dialouge.InitializeAndStartDialogue(sentences, names);
+        activated = true;
+>>>>>>> Stashed changes
     }
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Player")) {
+<<<<<<< Updated upstream
             dialouge.StartDialogue();
+=======
+            dialouge.InitializeAndStartDialogue(sentences, names);
+>>>>>>> Stashed changes
             activated = true;
         }
     }

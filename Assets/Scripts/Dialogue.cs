@@ -3,17 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+<<<<<<< Updated upstream
+=======
+using UnityEngine.UI;
+>>>>>>> Stashed changes
 
 public class Dialogue : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI textComponent;
     [SerializeField]
+<<<<<<< Updated upstream
     private string[] lines;
     [SerializeField]
     private float textSpeed;
     [SerializeField]
     private SpriteRenderer personImage;
+=======
+    private TextMeshProUGUI nameTextComponent;
+    [SerializeField]
+    private RawImage spriteRenderer;
+    [SerializeField]
+    private Texture2D[] sprites;
+    [SerializeField]
+    private string[] lines;
+    [SerializeField]
+    private string[] names;
+    [SerializeField]
+    private float textSpeed;
+>>>>>>> Stashed changes
 
 
     private int index;
@@ -22,7 +40,11 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
+<<<<<<< Updated upstream
         StartDialogue();
+=======
+        gameObject.SetActive(false);
+>>>>>>> Stashed changes
     }
 
     public void DialougeInput(InputAction.CallbackContext context) {
@@ -36,12 +58,36 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream
     public void StartDialogue(){
         index = 0;
         StartCoroutine(TypeLine());
     }
 
     private IEnumerator TypeLine() {
+=======
+    private void StartDialogue(){
+        index = 0;
+        textComponent.text = "";
+        gameObject.SetActive(true);
+        StartCoroutine(TypeLine());
+    }
+
+    public void InitializeAndStartDialogue(string[] newLines, string[] newNames) {
+        SetLines(newLines);
+        SetNames(newNames);
+        StartDialogue();
+    }
+
+    private IEnumerator TypeLine() {
+        nameTextComponent.text = names[index];
+        if(names[index] == "Bud") {
+            spriteRenderer.texture = sprites[0];
+        } else {
+            spriteRenderer.texture = sprites[1];
+        }
+
+>>>>>>> Stashed changes
         foreach(char c in lines[index].ToCharArray()) {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -57,4 +103,15 @@ public class Dialogue : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    public void SetLines(string[] newLines) {
+        lines = newLines;
+    }
+
+    public void SetNames(string[] newNames) {
+        names = newNames;
+    }
+>>>>>>> Stashed changes
 }

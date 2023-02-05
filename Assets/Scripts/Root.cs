@@ -9,6 +9,10 @@ public class Root : MonoBehaviour
     private Billboard interactPopup;
     [SerializeField]
     private Color connectionColor;
+    [SerializeField]
+    private bool triggerDialouge;
+    [SerializeField]
+    private DialougeTrigger dioTrigger;
     private SphereCollider sphereCollider;
     private LineRenderer lineRenderer;
 
@@ -42,6 +46,10 @@ public class Root : MonoBehaviour
                 rootBud.SetRoot(gameObject.GetComponent<Rigidbody>());
                 rootBud.SetCarryingNewRoot(true);
                 TriggerPopup(false);
+
+                if(triggerDialouge) {
+                    dioTrigger.ActivateWithInput();
+                }
             }
         }
     }
