@@ -24,6 +24,10 @@ public class WindTunnel : MonoBehaviour
     private float emissionRateMult;
     private BoxCollider boxCollider;
 
+    [Header("Sound Effects")]
+    [SerializeField]
+    private AudioSource windSource;
+
     private bool active;
 
     [SerializeField]
@@ -49,6 +53,10 @@ public class WindTunnel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Player")) {
+            if(budList.Count == 0) {
+                AudioManager.Instance.PlayWind(windSource);
+                AudioManager.Instance.PlayMusic("Intense Theme");
+            }
             budList.Add(other.gameObject.GetComponent<PlayerMovement>());
         }
     }
@@ -60,6 +68,10 @@ public class WindTunnel : MonoBehaviour
                     budList.RemoveAt(i);
                     i = budList.Count;
                 }
+            }
+            if(budList.Count == 0) {
+                AudioManager.Instance.StopWind();
+                AudioManager.Instance.PlayMusic("Upbeat Theme");
             }
         }
     }

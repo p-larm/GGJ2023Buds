@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private int velocityHash;
 
+    [Header("Sound")]
+    private float maxStepTimer = 0.5f;
+    private float stepTimer = 0;
+
     private Bud budRef;
 
     private void Awake(){
