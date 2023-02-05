@@ -62,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        Vector3 lookTo = new Vector3(movementVector.x, transform.rotation.y, movementVector.y);
+        transform.forward = Vector3.Lerp(transform.forward, lookTo, 0.01f);
+
         animator.SetFloat(velocityHash, (currentSpeed / speed));
 
         if(IsGrounded()) {
@@ -98,6 +101,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void AddForce(Vector3 force) {
-        rb.AddForce(force, ForceMode.Force);
+        rb.AddForce(force / budRef.GetCamera().GetComponent<CameraController>().GetBudCount(), ForceMode.Force);
     }
 }

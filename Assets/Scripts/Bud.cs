@@ -126,4 +126,8 @@ public class Bud : MonoBehaviour
             b.transform.position = rootBud.transform.position + randomDirection * 4;
         }
     }
+
+    public Camera GetCamera() {
+        return mainCamera;
+    }
 }
