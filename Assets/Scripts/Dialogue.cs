@@ -30,6 +30,7 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         gameObject.SetActive(false);
+        StartDialogue();
     }
 
     public void DialougeInput(InputAction.CallbackContext context) {

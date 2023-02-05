@@ -28,6 +28,7 @@ public class Bud : MonoBehaviour
     private Color endColor;
     private SpringJoint rootTether;
     private LineRenderer lineRenderer;
+    [SerializeField]
     private bool carryingNewRoot;
 
     private void Awake() {

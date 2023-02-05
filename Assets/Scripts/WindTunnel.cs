@@ -28,6 +28,13 @@ public class WindTunnel : MonoBehaviour
     [SerializeField]
     private AudioSource windSource;
 
+    [Header("Dialouge")]
+    [SerializeField]
+    private bool isDialougeTrigger;
+    [SerializeField]
+    private DialougeTrigger dialougeTrigger;
+    private bool triggered = false;
+
     private bool active;
 
     [SerializeField]
@@ -58,6 +65,11 @@ public class WindTunnel : MonoBehaviour
                 AudioManager.Instance.PlayMusic("Intense Theme");
             }
             budList.Add(other.gameObject.GetComponent<PlayerMovement>());
+
+            if(!triggered && isDialougeTrigger) {
+                dialougeTrigger.ActivateWithInput();
+                triggered = true;
+            }
         }
     }
 

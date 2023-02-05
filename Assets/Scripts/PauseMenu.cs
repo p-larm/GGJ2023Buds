@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu Instance;
+
     [SerializeField]
     private GameObject container;
     public Slider _musicSlider, _sfxSlider;
@@ -13,6 +15,12 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake() {
         container.SetActive(false);
+        if(Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
     }
 
     public void TogglePauseMenu(InputAction.CallbackContext context){

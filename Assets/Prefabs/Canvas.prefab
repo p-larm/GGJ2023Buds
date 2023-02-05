@@ -148,7 +148,7 @@ RectTransform:
   m_Children:
   - {fileID: 3789443073836184172}
   m_Father: {fileID: 3789443072166353305}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -559,8 +559,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 3789443073366544110}
   - {fileID: 3789443071909795481}
+  - {fileID: 3789443073366544110}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1124,7 +1124,7 @@ RectTransform:
   - {fileID: 3789443072154550675}
   - {fileID: 3789443072759968648}
   m_Father: {fileID: 3789443072166353305}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1272,7 +1272,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3789443072154550674}
   sprites:
   - {fileID: 2800000, guid: 99d1a693a4ebbf34ab323b2e013a820f, type: 3}
-  - {fileID: 2800000, guid: 853ccd7fe737ef74cbe8b6e0c2b2ff0d, type: 3}
+  - {fileID: 2800000, guid: c405cc3d21b2af2459a39f4e087bde11, type: 3}
   lines: []
   names: []
   textSpeed: 0.07

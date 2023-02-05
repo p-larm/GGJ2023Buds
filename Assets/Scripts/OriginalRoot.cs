@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class OriginalRoot : MonoBehaviour
 {
@@ -36,5 +37,7 @@ public class OriginalRoot : MonoBehaviour
             yield return null;
         }
         sphereCollider.radius = originalRadius * 2;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

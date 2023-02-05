@@ -9935,6 +9935,7 @@ Transform:
   - {fileID: 8198992021078987083}
   - {fileID: 3999628685625230718}
   - {fileID: 4908505037777961323}
+  - {fileID: 2147232940184274803}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9975,4 +9976,92 @@ MonoBehaviour:
   straightEffect: {fileID: 2156393316153683051}
   emissionRateMult: 0.05
   windSource: {fileID: 6050198990380758775}
+  isDialougeTrigger: 0
+  dialougeTrigger: {fileID: 2147232940184274800}
   budList: []
+--- !u!1001 &8813952319527016685
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8198992022216107941}
+    m_Modifications:
+    - target: {fileID: 7466389925920825233, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_Name
+      value: DialougeTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825245, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: names.Array.data[0]
+      value: R.O.O.T.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825245, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: This wind is stong. If you had some more buddies to move around, it
+        might be easier to stay rooted. had
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825245, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: Multiply or die. Got it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.91275233
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.651728
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.800323
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+--- !u!4 &2147232940184274803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7466389925920825246, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+  m_PrefabInstance: {fileID: 8813952319527016685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2147232940184274800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7466389925920825245, guid: 003de45349e7ee340850abf046cff98d, type: 3}
+  m_PrefabInstance: {fileID: 8813952319527016685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76005030e3c5622478c65eef5b383478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
