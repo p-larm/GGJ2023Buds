@@ -37,7 +37,10 @@ public class Bud : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.startColor = Color.green;
         mainCamera = Camera.main;
-        mainCamera.gameObject.GetComponent<CameraController>().AddBud(this);
+        if (mainCamera != null)
+        {
+            mainCamera.gameObject.GetComponent<CameraController>().AddBud(this);
+        }
 
         carryingNewRoot = false;
 
