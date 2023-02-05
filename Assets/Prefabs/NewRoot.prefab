@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 8956796643349025185}
   - component: {fileID: 8705863051238020652}
   - component: {fileID: 4424131497802411058}
-  - component: {fileID: 1612911600166873215}
   m_Layer: 0
   m_Name: NewRoot
   m_TagString: Untagged
@@ -464,15 +463,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
-<<<<<<< Updated upstream
---- !u!114 &1612911600166873215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8956796643349025190}
-=======
 --- !u!1001 &1137668814741395070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -541,13 +531,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1137668814741395070}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
->>>>>>> Stashed changes
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76005030e3c5622478c65eef5b383478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  dialouge: {fileID: 0}
-=======
->>>>>>> Stashed changes

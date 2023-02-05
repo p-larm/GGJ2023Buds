@@ -3,24 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-<<<<<<< Updated upstream
-=======
 using UnityEngine.UI;
->>>>>>> Stashed changes
 
 public class Dialogue : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI textComponent;
+    private Text textComponent;
     [SerializeField]
-<<<<<<< Updated upstream
-    private string[] lines;
-    [SerializeField]
-    private float textSpeed;
-    [SerializeField]
-    private SpriteRenderer personImage;
-=======
-    private TextMeshProUGUI nameTextComponent;
+    private Text nameTextComponent;
     [SerializeField]
     private RawImage spriteRenderer;
     [SerializeField]
@@ -31,7 +21,6 @@ public class Dialogue : MonoBehaviour
     private string[] names;
     [SerializeField]
     private float textSpeed;
->>>>>>> Stashed changes
 
 
     private int index;
@@ -40,11 +29,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-<<<<<<< Updated upstream
-        StartDialogue();
-=======
         gameObject.SetActive(false);
->>>>>>> Stashed changes
     }
 
     public void DialougeInput(InputAction.CallbackContext context) {
@@ -58,14 +43,6 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
-    public void StartDialogue(){
-        index = 0;
-        StartCoroutine(TypeLine());
-    }
-
-    private IEnumerator TypeLine() {
-=======
     private void StartDialogue(){
         index = 0;
         textComponent.text = "";
@@ -87,7 +64,6 @@ public class Dialogue : MonoBehaviour
             spriteRenderer.texture = sprites[1];
         }
 
->>>>>>> Stashed changes
         foreach(char c in lines[index].ToCharArray()) {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -103,8 +79,6 @@ public class Dialogue : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-<<<<<<< Updated upstream
-=======
 
     public void SetLines(string[] newLines) {
         lines = newLines;
@@ -113,5 +87,4 @@ public class Dialogue : MonoBehaviour
     public void SetNames(string[] newNames) {
         names = newNames;
     }
->>>>>>> Stashed changes
 }
