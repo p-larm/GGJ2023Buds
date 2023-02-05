@@ -252,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   maxGravity: 20
-  gravityInc: 0
+  gravityInc: 30
   speedAcl: 10
   speedDecel: 20
   groundCheck: {fileID: 4171449940938758249}
