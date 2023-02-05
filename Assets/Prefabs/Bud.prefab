@@ -275,7 +275,7 @@ MonoBehaviour:
   isRootBud: 1
   rootBud: {fileID: 0}
   budPrefab: {fileID: 6228291024031781740}
-  maxDistanceFromRoot: 20
+  maxDistanceFromRoot: 900
   distanceIncreaseAmt: 10
   newBudDistance: 3
   root: {fileID: 0}
